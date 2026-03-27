@@ -1,6 +1,17 @@
 public class BookMyStayApp {
     static void main() {
-        System.out.println("Hello!! Welcom to Book my Stay app");
-        System.out.println("Book your Hotel");
-    }
-}
+                String[] roomTypes = {"Single Room", "Double Room", "Deluxe Room"};
+                int[] availability = {5, 3, 2};
+
+                System.out.println("Welcome to the Hotel Booking Management System");
+                System.out.println("System initialized successfully.");
+                System.out.println("Welcome to the Hotel Booking Management System");
+                System.out.println("Available Room Types:\n");
+
+                for (int i = 0; i < roomTypes.length; i++) {
+                    System.out.println(roomTypes[i] + " - Available: " + availability[i]);
+                }
+
+                System.out.println("\nSystem initialized successfully.");
+            }
+        }
