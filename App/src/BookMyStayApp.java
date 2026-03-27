@@ -4,52 +4,45 @@ import java.util.Scanner;
 public class BookMyStayApp {
     static void main() {
 
-            HashMap<String, Integer> roomInventory = new HashMap<>();
-            roomInventory.put("Single Room", 5);
-            roomInventory.put("Double Room", 3);
-            roomInventory.put("Deluxe Room", 2);
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Welcome to the Hotel Booking Management System");
-            System.out.print("Enter room type to search: ");
-            String searchRoom = scanner.nextLine();
-            if (roomInventory.containsKey(searchRoom)) {
-                int available = roomInventory.get(searchRoom);
+        HashMap<String, Integer> roomInventory = new HashMap<>();
+        HashMap<String, Integer> roomInventory = new HashMap<>();
+        roomInventory.put("Single Room", 5);
+        roomInventory.put("Double Room", 3);
+        roomInventory.put("Deluxe Room", 2);
 
-                if (available > 0) {
-                    System.out.println(searchRoom + " is available. Rooms left: " + available);
+        HashMap<String, Integer> roomNumbers = new HashMap<>();
+        roomNumbers.put("Single Room", 101);
+        roomNumbers.put("Double Room", 201);
+        roomNumbers.put("Deluxe Room", 301);
+        Scanner scanner = new Scanner(System.in);
 
-                    HashMap<String, Integer> roomInventory = new HashMap<>();
-                    roomInventory.put("Single Room", 5);
-                    roomInventory.put("Double Room", 3);
-                    roomInventory.put("Deluxe Room", 2);
+        System.out.println("Welcome to the Hotel Booking Management System");
 
-                    Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter room type to book: ");
+        String roomType = scanner.nextLine();
 
-                    System.out.println("Welcome to the Hotel Booking Management System");
+        public static void main() {
 
-                    System.out.print("Enter room type to book: ");
-                    String roomType = scanner.nextLine();
+            Integer available;
+            if (available > 0) {
 
-                    if (roomInventory.containsKey(roomType)) {
-                        int available = roomInventory.get(roomType);
 
-                        if (available > 0) {
+                int allocatedRoom = roomNumbers.get(roomType);
 
-                            roomInventory.put(roomType, available - 1);
-                            System.out.println("Booking confirmed for " + roomType);
-                            System.out.println("Remaining rooms: " + roomInventory.get(roomType));
-                        } else {
-                            System.out.println("Sorry, " + roomType + " is fully booked.");
-                        }
-                    } else {
-                        System.out.println(searchRoom + " is currently not available.");
-                        System.out.println("Invalid room type.");
-                    }
-                } else {
-                    System.out.println("Invalid room type.");
+                roomInventory.put(roomType, available - 1);
+                System.out.println("Booking confirmed for " + roomType);
+                System.out.println("Remaining rooms: " + roomInventory.get(roomType));
 
-                    scanner.close();
-                }
+                roomNumbers.put(roomType, allocatedRoom + 1);
 
-                scanner.close();
+                System.out.println("\nBooking Confirmed!");
+                System.out.println("Room Type: " + roomType);
+                System.out.println("Allocated Room Number: " + allocatedRoom);
+                System.out.println("Remaining Rooms: " + roomInventory.get(roomType));
+
+            } else {
+                System.out.println("Sorry, " + roomType + " is fully booked.");
             }
+            
+                scanner.close();
+            }}}
